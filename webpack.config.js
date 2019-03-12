@@ -31,17 +31,17 @@ module.exports = {
 	},
 
 	optimization: {
-		minimizer: [
-			new UglifyJsWebpackPlugin({
-				sourceMap: true,
-				uglifyOptions: {
-					output: {
-						// Preserve CKEditor 5 license comments.
-						comments: /^!/
-					}
-				}
-			})
-		]
+		 minimizer: [
+		 	new UglifyJsWebpackPlugin({
+		 		sourceMap: true,
+		 		uglifyOptions: {
+		 			output: {
+		 				// Preserve CKEditor 5 license comments.
+		 				comments: /^!/
+		 			}
+		 		}
+		 	})
+		 ]
 	},
 
 	plugins: [
