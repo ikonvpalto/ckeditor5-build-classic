@@ -18,7 +18,7 @@ module.exports = {
 	performance: { hints: false },
 	entry: {
 		"ckeditor": [require.resolve('@babel/runtime/regenerator/index.js'), path.resolve(__dirname, 'src', 'ckeditor.js')],
-		"ckeditor-extended": [require.resolve('@babel/runtime/regenerator/index.js'), path.resolve(__dirname, 'src', 'ckeditor-extended.js')]
+		// "ckeditor-extended": [require.resolve('@babel/runtime/regenerator/index.js'), path.resolve(__dirname, 'src', 'ckeditor-extended.js')]
 	},
 	output: {
 		// The name under which the editor will be exported.
@@ -49,7 +49,7 @@ module.exports = {
 			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
 			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.js).
 			language: 'en',
-			additionalLanguages: ['ru']
+			additionalLanguages: ['ru', 'en']
 		}),
 		new webpack.BannerPlugin({
 			banner: bundler.getLicenseBanner(),

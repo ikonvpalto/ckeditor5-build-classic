@@ -26,6 +26,17 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Clipboard from '@ckeditor/ckeditor5-clipboard/src/clipboard';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -50,7 +61,18 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
     TableToolbar,
-    BalloonToolbar
+    BalloonToolbar,
+    Underline,
+    Strikethrough,
+    Subscript,
+    Superscript,
+    Code,
+    CKFinder,
+    EasyImage,
+    Alignment,
+    Font,
+    Clipboard,
+    Highlight
 ];
 
 // Editor configuration.
@@ -60,14 +82,23 @@ ClassicEditor.defaultConfig = {
 			'heading',
 			'|',
 			'bold',
-			'italic',
+            'italic', 
+            'strikethrough', 
+            'subscript', 
+            'superscript', 
+            'code', 
+            'alignment',
+            'fontFamily',
+            'fontSize',
 			'link',
 			'bulletedList',
 			'numberedList',
-			'imageUpload',
+            'embed',
+            'imageExtended',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
+            'mediaEmbed',
+            'highlight',
 			'undo',
 			'redo'
 		]
@@ -86,7 +117,10 @@ ClassicEditor.defaultConfig = {
 			'tableRow',
 			'mergeTableCells'
 		]
-	},
+    },
+    fontSize: {
+        options: new Array(31).map((_, i) => 10 + i * 2)
+    },
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };

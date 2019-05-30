@@ -51,7 +51,9 @@ ClassicEditor.defaultConfig = {
 			'undo',
 			'redo'
 		]
-	}
+    },
+    
+	language: 'en'
 };
 
 
